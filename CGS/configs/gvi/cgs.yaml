@@ -1,0 +1,28 @@
+model:
+  name: CGS
+  num_heads: 64
+  gamma: 0.5
+  num_hidden_gn: 3
+  nf_dim: 1
+  ef_dim: 1
+  sol_dim: 1
+  norm_method: degree
+  non_linear: Identity
+  n_hidden_dim: 64
+  e_hidden_dim: 64
+  node_aggregator: sum
+  mlp_num_neurons: [ 128 ]
+  reg_num_neurons: [ 64, 32 ]
+  activation: LeakyReLU
+opt:
+  name: Adam
+  lr: 1e-3
+train:
+  n_workers: 1
+  n_updates: 5000
+  generate_g_every: 32
+  bs: 64
+  device: cuda:0
+  ns_range: [ 20, 50 ]
+  na_range: [ 5, 10 ]
+  max_grad_norm: 0.0

@@ -1,0 +1,34 @@
+model:
+  name: CGS
+  num_heads: 32
+  gamma: 0.5
+  num_hidden_gn: 2
+  nf_dim: 0 # will be specified by code
+  sol_dim: 0 # will be specified by code
+  n_hidden_dim: 64
+  e_hidden_dim: 64
+  ef_dim: 1
+  non_linear: Identity
+  node_task: False
+  reg_dp: 0.0
+  node_readout: 'sum'
+  node_aggregator: 'mean'
+  mlp_num_neurons: [ 128 ]
+  mlp_input_norm: False
+  reg_num_neurons: [ 64, 32 ]
+  activation: SiLU
+opt:
+  name: Adam
+  lr: 1e-3
+  scheduler: cosine
+exp:
+  dataset: MUTAG
+  fold_idx: 0
+train:
+  epochs: 500
+  bs: 128
+  device: cuda:0
+  eval_every: 1
+  self_loop: False
+  degree_as_nlabel: False
+  seed: 0

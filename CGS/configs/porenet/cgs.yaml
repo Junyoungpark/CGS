@@ -1,0 +1,24 @@
+model:
+  name: CGS
+  num_heads: 16
+  gamma: 0.5
+  num_hidden_gn: 0
+  nf_dim: 5
+  ef_dim: 3
+  sol_dim: 1
+  non_linear: Identity
+  n_hidden_dim: 32
+  e_hidden_dim: 32
+  node_aggregator: sum
+  mlp_num_neurons: [ 64 ]
+  reg_num_neurons: [ 64, 32 ]
+  activation: LeakyReLU
+opt:
+  name: Adam
+  lr: 1e-3
+train:
+  n_updates: 1000
+  generate_g_every: 32
+  bs: 32
+  device: cuda:0
+  tessellation: 'Delaunay'
