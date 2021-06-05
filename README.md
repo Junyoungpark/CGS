@@ -1,6 +1,6 @@
 # Convergent Graph Solvers
 
-The official code repository of Convergent Graph Solvers (CGS) [[paper](https://arxiv.org/abs/2106.01680, "CGS Arxiv link")]
+The official code repository of Convergent Graph Solvers (CGS) [[paper](https://arxiv.org/abs/2106.01680)]
 
 ### Requirements
 
