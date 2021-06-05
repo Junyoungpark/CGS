@@ -14,9 +14,7 @@ class AttnMPNN(nn.Module):
                  edge_out_dim: int = 64,
                  num_hidden_gn: int = 0,
                  node_aggregator: str = 'mean',
-                 mlp_params: dict = {},
-                 preserve_cardinality: bool = False,
-                 spectral_norm: bool = False):
+                 mlp_params: dict = {}):
         super(AttnMPNN, self).__init__()
 
         self.node_in_dim = node_in_dim
@@ -26,8 +24,6 @@ class AttnMPNN(nn.Module):
         self.edge_in_dim = edge_in_dim
         self.edge_hidden_dim = edge_hidden_dim
         self.edge_out_dim = edge_out_dim
-        self.preserve_cardinality = preserve_cardinality
-        self.spectral_norm = spectral_norm
 
         node_in_dims = [node_in_dim] + num_hidden_gn * [node_hidden_dim]
         node_out_dims = num_hidden_gn * [node_hidden_dim] + [node_out_dim]

@@ -65,7 +65,6 @@ def get_graphtask_model(num_heads: int,
                         reg_num_neurons: list = [],
                         activation: str = 'ReLU',
                         node_aggregator: str = 'mean'):
-
     mlp_num_neurons = list(mlp_num_neurons)
     reg_num_neurons = list(reg_num_neurons)
 
