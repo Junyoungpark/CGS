@@ -5,9 +5,9 @@ The official code repository of Convergent Graph Solvers (CGS) [[paper](https://
 ### Requirements
 
 - pytorch
-- dgl 0.6.1
-- openpnm 2.6.1
-- hydra - config managemet
+- dgl 0.7.0
+- openpnm 2.8.2
+- hydra 1.1
 
 ### Quick start
 
