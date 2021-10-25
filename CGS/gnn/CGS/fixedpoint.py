@@ -7,14 +7,12 @@ class FixedPointLayer(nn.Module):
                  gamma: float,
                  activation: str,
                  tol: float = 1e-6,
-                 max_iter: int = 50,
-                 alpha: float = 1.0):
+                 max_iter: int = 50):
 
         super(FixedPointLayer, self).__init__()
         self.gamma = gamma
         self.tol = tol
         self.max_iter = max_iter
-        self.alpha = alpha
         self.act = getattr(nn, activation)()
         self._act_str = activation
 
@@ -72,14 +70,10 @@ class FixedPointLayer(nn.Module):
         Find the fixed point of x = gamma * A * x + b
         """
 
-        # initialize the solution w/ b is done to support backward scheme also.
-        # o/w Pytorch complains like 'backward not multiplied by grad_output'
-
         x = torch.zeros_like(b, device=b.device)  # [#. heads x #.total nodes - possibly batched]
         itr = 0
         while itr < max_itr:
             x_next = act(gamma * torch.bmm(A, x) + b)
-            # x_next = self.alpha * x_next + (1.0 - self.alpha) * x  # damping
             g = x - x_next
             if torch.norm(g) < tol:
                 break
