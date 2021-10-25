@@ -11,7 +11,7 @@ from CGS.gnn.CGS.get_model import get_model
 from CGS.utils.test_utils import print_perf
 
 
-@hydra.main(config_name="CGS/configs/porenet/cgs")
+@hydra.main(config_path="./CGS/configs/porenet", config_name='cgs')
 def main(config=None):
     device = config.train.device
 

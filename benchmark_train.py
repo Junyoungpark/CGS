@@ -41,7 +41,7 @@ def eval_model(config, model, dataloader, criterion):
     return loss, acc
 
 
-@hydra.main(config_name="CGS/configs/benchmark/cgs")
+@hydra.main(config_path="./CGS/configs/benchmark", config_name='cgs')
 def main(config=None):
     use_cuda = True if 'cuda' in config.train.device else False
     set_seed(config.train.seed, use_cuda)
