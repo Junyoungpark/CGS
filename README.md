@@ -1,6 +1,6 @@
 # Convergent Graph Solvers
 
-The official code repository of Convergent Graph Solvers (CGS).
+The official code repository of Convergent Graph Solvers (CGS)
 
 ## Paper
 For more details, please see our paper [Convergent Graph Solvers](https://openreview.net/forum?id=ItkxLQU01lD) which has been accepted at ICLR 2022. 
